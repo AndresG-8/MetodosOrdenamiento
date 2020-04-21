@@ -24,14 +24,14 @@ namespace MetodosOrdenamiento
             //se llaman los métodos de ordenamiento
             sorted = pv.BubbleSort(unsorted);
             pv.Imprimir(sorted, "Lista ordenada BubbleSort: ");
-            
+
             sorted = pv.InsertionSort(unsorted);
             pv.Imprimir(sorted, "Lista ordenada InsertionSort: ");
-            
+
             sorted = pv.SelectionSort(unsorted);
             pv.Imprimir(sorted, "Lista ordenada SelectionSort: ");
-            
-            sorted = pv.QuickSort(unsorted, unsorted.FirstOrDefault(), unsorted.LastOrDefault() );
+
+            sorted = pv.QuickSort(unsorted, 0, unsorted.Count()-1 );
             pv.Imprimir(sorted, "Lista ordenada QuickSort: ");
 
             sorted = pv.ShellSort(unsorted);
@@ -158,7 +158,7 @@ namespace MetodosOrdenamiento
             int i, j, central;
             double pivote;
             central = (primero + ultimo) / 2;
-            pivote = unsorted[central] - 1;
+            pivote = unsorted[central];
             i = primero;
             j = ultimo;
             do
